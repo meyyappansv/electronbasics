@@ -1,0 +1,14 @@
+{
+    "name": "hello_world_window",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "electron": "electron ."
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "electron": "^34.0.0"
+    },
+    "description": ""
+}

@@ -1,0 +1,27 @@
+<head>
+    <title>Browser Window Hello World</title>
+</head>
+<body>
+    <h1>Video Upload</h1>
+    <form>
+        <div>
+            <label>Select a video</label>
+            <input type="file" accept="video/*"/>
+        </div>
+        <button type="submit"> Get Info</button>
+    </form>
+    <script>
+            const electron = require('electron');
+            //IPC back to electron app
+            const { ipcRenderer } = electron; //pulling an object ipcRenderer from electron
+            document.querySelector('form').addEventListener('submit', (event)=> {
+                event.preventDefault(); //TODO Understand what is default event submission
+                //debugger   //execution will pause here
+                const file = document.querySelector('input').files[0];
+                debugger
+                const { path } = document.querySelector('input').files[0]; //extract path property from the object
+                ipcRenderer.send('video:submit',path) //this named event will be sent to electron. Noun:event
+
+            });
+    </script>
+</body>
